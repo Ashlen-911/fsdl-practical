@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Calculator</title>
+  <style>
+    body { 
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #f0f2f5;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+    .calculator {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    #display {
+      width: 200px;
+      height: 50px;
+      margin-bottom: 10px;
+      padding: 10px;
+      font-size: 1.5rem;
+      text-align: right;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      background: #f8f9fa;
+    }
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+    }
+    button {
+      padding: 15px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 6px;
+      background: #f8f9fa;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    button:hover {
+      background: #e9ecef;
+    }
+    .operator {
+      background: #4dabf7;
+      color: white;
+    }
+    .operator:hover {
+      background: #339af0;
+    }
+    .equals {
+      background: #40c057;
+      color: white;
+      grid-column: span 2;
+    }
+    .equals:hover {
+      background: #37b24d;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input id="display" readonly />
+    <div class="buttons">
+      <button class="operator" onclick="clearDisplay()">C</button>
+      <button class="operator" onclick="appendChar('/')">/</button>
+      <button class="operator" onclick="appendChar('*')">×</button>
+      <button class="operator" onclick="appendChar('-')">-</button>
+      <button onclick="appendChar('7')">7</button>
+      <button onclick="appendChar('8')">8</button>
+      <button onclick="appendChar('9')">9</button>
+      <button class="operator" onclick="appendChar('+')">+</button>
+      <button onclick="appendChar('4')">4</button>
+      <button onclick="appendChar('5')">5</button>
+      <button onclick="appendChar('6')">6</button>
+      <button onclick="appendChar('.')">.</button>
+      <button onclick="appendChar('1')">1</button>
+      <button onclick="appendChar('2')">2</button>
+      <button onclick="appendChar('3')">3</button>
+      <button onclick="appendChar('0')">0</button>
+      <button class="equals" onclick="calculate()">=</button>
+    </div>
+  </div>
+
+  <script>
+    const display = document.getElementById('display');
+    
+    function appendChar(char) {
+      display.value += char;
+    }
+
+    function clearDisplay() {
+      display.value = '';
+    }
+
+    function calculate() {
+      try {
+        display.value = eval(display.value);
+      } catch {
+        display.value = 'Error';
+        setTimeout(clearDisplay, 1000);
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Quiz App</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: #f0f2f5;
+    }
+    .quiz-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .question {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      color: #343a40;
+    }
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-bottom: 2rem;
+    }
+    .option {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      border: 2px solid #dee2e6;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .option:hover {
+      background: #f8f9fa;
+      border-color: #4dabf7;
+    }
+    .option.correct {
+      background: #d3f9d8;
+      border-color: #40c057;
+    }
+    .option.wrong {
+      background: #ffe3e3;
+      border-color: #ff6b6b;
+    }
+    #nextBtn {
+      width: 100%;
+      padding: 12px;
+      background: #4dabf7;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background 0.2s;
+    }
+    #nextBtn:hover {
+      background: #339af0;
+    }
+    .score {
+      text-align: center;
+      font-size: 1.5rem;
+      padding: 2rem;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+    .progress {
+      text-align: right;
+      color: #868e96;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h2>Quiz</h2>
+  <div id="quiz"></div>
+  <button id="nextBtn" onclick="next()">Next</button>
+  <script>
+    const questions = [
+      { q:'2+2=?', a:['3','4','5'], correct:1 },
+      { q:'Capital of FR?', a:['Paris','Rome','Berlin'], correct:0 },
+      { q:'Sun rises in?', a:['West','East','North'], correct:1 },
+      { q:'HTML stands for?', a:['Hyper…','High…','Huge…'], correct:0 },
+      { q:'JS is a?', a:['Library','Language','Framework'], correct:1 }
+    ];
+    let idx=0, score=0;
+    const quizDiv = document.getElementById('quiz');
+    function render() {
+      const { q,a } = questions[idx];
+      quizDiv.innerHTML = `<p>${q}</p>` + a.map((opt,i)=>
+        `<label><input type="radio" name="opt" value="${i}"/> ${opt}</label><br>`
+      ).join('');
+    }
+    function next() {
+      const sel = document.querySelector('input[name="opt"]:checked');
+      if (sel && +sel.value === questions[idx].correct) score++;
+      idx++;
+      if (idx < questions.length) render();
+      else quizDiv.innerHTML = `<h3>Your score: ${score}/${questions.length}</h3>`;
+    }
+    render();
+  </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>To‑Do List</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px 20px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    #taskInput {
+      padding: 10px;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 16px;
+      margin-left: 10px;
+      font-size: 16px;
+      background: #28a745;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #218838;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      width: 300px;
+      margin-top: 30px;
+    }
+
+    li {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 10px 14px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    li:hover {
+      background: #f9f9f9;
+    }
+
+    li.completed {
+      text-decoration: line-through;
+      color: #999;
+      background: #e9ecef;
+    }
+
+    li button {
+      background: #dc3545;
+      border: none;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    li button:hover {
+      background: #c82333;
+    }
+  </style>
+</head>
+<body>
+  <h2>To‑Do List</h2>
+  <div>
+    <input id="taskInput" placeholder="New task…" />
+    <button onclick="addTask()">Add</button>
+  </div>
+  <ul id="tasks"></ul>
+
+  <script>
+    function addTask() {
+      const text = document.getElementById('taskInput').value.trim();
+      if (!text) return;
+      const li = document.createElement('li');
+      li.textContent = text;
+      li.onclick = () => li.classList.toggle('completed');
+      const del = document.createElement('button');
+      del.textContent = '✕';
+      del.onclick = e => { e.stopPropagation(); li.remove(); };
+      li.appendChild(del);
+      document.getElementById('tasks').appendChild(li);
+      document.getElementById('taskInput').value = '';
+    }
+  </script>
+</body>
+</html>

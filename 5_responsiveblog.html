@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Blog</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f9fa;
+    }
+    .featured {
+      background: linear-gradient(to right, #d9edf7, #f7ecde);
+    }
+    .post-card {
+      background: white;
+      border-radius: 0.5rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .post-card:hover {
+      transform: translateY(-4px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">My Blog</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Featured Post -->
+  <div class="container my-4">
+    <div class="p-4 rounded featured">
+        <h2>Welcome to My Blog</h2>
+        <p>I write about life, learning, and little discoveries. Thanks for visiting!</p>
+    </div>
+  </div>
+
+  <!-- Article Grid -->
+  <div class="container mb-5">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="p-3 post-card">
+            <h5>My Morning Routine</h5>
+          <p>Here's how I start my day with focus and calm. Simple steps anyone can follow.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-3 post-card">
+            <h5>Books I Recommend</h5>
+            <p>A list of books that have made a real impact on my thinking and creativity.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-3 post-card">
+            <h5>Why I Started Blogging</h5>
+            <p>Sharing my story and the reasons that encouraged me to begin writing online.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Countdown Timer</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #f0f2f5;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+    .timer-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .controls {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 1rem;
+    }
+    input {
+      width: 60px;
+      padding: 8px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-size: 1rem;
+      text-align: center;
+    }
+    button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      background: #4dabf7;
+      color: white;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    button:hover {
+      background: #339af0;
+    }
+    button.stop {
+      background: #ff6b6b;
+    }
+    button.stop:hover {
+      background: #fa5252;
+    }
+    #time {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #343a40;
+      margin: 1rem 0;
+      padding: 1rem;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="timer-container">
+    <h2>Countdown Timer</h2>
+    <div class="controls">
+      <label>Min: <input id="min" type="number" value="0" min="0" /></label>
+      <label>Sec: <input id="sec" type="number" value="0" min="0" max="59" /></label>
+    </div>
+    <div class="controls">
+      <button onclick="start()">Start</button>
+      <button class="stop" onclick="stop()">Stop</button>
+      <button onclick="reset()">Reset</button>
+    </div>
+    <div id="time">00:00</div>
+  </div>
+
+  <script>
+    let interval;
+    let total = 0;
+    
+    function updateDisplay() {
+      const m = String(Math.floor(total / 60)).padStart(2, '0');
+      const s = String(total % 60).padStart(2, '0');
+      time.textContent = `${m}:${s}`;
+    }
+
+    function start() {
+      stop();
+      total = parseInt(min.value) * 60 + parseInt(sec.value);
+      if (total <= 0) return;
+      
+      updateDisplay();
+      interval = setInterval(() => {
+        total--;
+        if (total < 0) {
+          stop();
+          alert('Time’s up!');
+          return;
+        }
+        updateDisplay();
+      }, 1000);
+    }
+
+    function stop() {
+      clearInterval(interval);
+    }
+
+    function reset() {
+      stop();
+      min.value = '0';
+      sec.value = '0';
+      updateDisplay();
+    }
+  </script>
+</body>
+</html>

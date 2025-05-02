@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Indian Menu</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <style>
+    body {
+      background: #e1ffb3;
+      padding: 2rem 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h1 {
+      color: #333;
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 40px;
+    }
+    .category-title {
+      margin: 2rem 0 1rem;
+      font-weight: 600;
+      font-size: 1.5rem;
+      color: #444;
+    }
+    .price {
+      color: #a92230;
+      font-weight: bold;
+    }
+    .card-img-top {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .card-body {
+      padding: 10px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      border-radius: 0 0 10px 10px;
+    }
+    .card {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .row-cols-1 .col {
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="mb-4">Golden Bistro</h1>
+
+    <!-- Starters -->
+    <h2 class="category-title">Starters</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://vegecravings.com/wp-content/uploads/2017/03/samosa-recipe-step-by-step-instructions.jpg"
+               class="card-img-top" alt="Samosa">
+          <div class="card-body">
+            <span>Vegetable Samosa</span>
+            <span class="price">₹80</span>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfPSukRfeHtN7tj8-ayndPIH9C0Bt1VVrbbA&s"
+               class="card-img-top" alt="Paneer Tikka">
+          <div class="card-body">
+            <span>Paneer Tikka</span>
+            <span class="price">₹220</span>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://i0.wp.com/binjalsvegkitchen.com/wp-content/uploads/2025/03/Beetroot-Dahi-Papdi-Chaat-Board-H1.jpg?fit=600%2C900&ssl=1"
+               class="card-img-top" alt="Papdi Chaat">
+          <div class="card-body">
+            <span>Papdi Chaat</span>
+            <span class="price">₹120</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Courses -->
+    <h2 class="category-title">Main Courses</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://images.immediate.co.uk/production/volatile/sites/30/2021/02/butter-chicken-ac2ff98.jpg?quality=90&resize=440,400"
+               class="card-img-top" alt="Butter Chicken">
+          <div class="card-body">
+            <span>Butter Chicken</span>
+            <span class="price">₹320</span>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://www.cubesnjuliennes.com/wp-content/uploads/2020/07/Chicken-Biryani-Recipe.jpg"
+               class="card-img-top" alt="Hyderabadi Biryani">
+          <div class="card-body">
+            <span>Hyderabadi Biryani</span>
+            <span class="price">₹350</span>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://www.yummytummyaarthi.com/wp-content/uploads/2021/11/palak-paneer-1.jpg"
+               class="card-img-top" alt="Palak Paneer">
+          <div class="card-body">
+            <span>Palak Paneer</span>
+            <span class="price">₹280</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desserts -->
+    <h2 class="category-title">Desserts</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2021/11/gulab-jamun.webp"
+               class="card-img-top" alt="Gulab Jamun">
+          <div class="card-body">
+            <span>Gulab Jamun</span>
+            <span class="price">₹80</span>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA5WIVN79OzPBdQ3pRbsSRnzPiUemWKuKCQQ&s"
+               class="card-img-top" alt="Rasmalai">
+          <div class="card-body">
+            <span>Rasmalai</span>
+            <span class="price">₹100</span>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcZDSz_1ZeggejkAKBO43Hy_lO7Hxb_r2qsg&s"
+               class="card-img-top" alt="Mango Kulfi">
+          <div class="card-body">
+            <span>Mango Kulfi</span>
+            <span class="price">₹90</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  ></script>
+</body>
+</html>
