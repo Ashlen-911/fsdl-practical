@@ -1,0 +1,17 @@
+<script>start("c:\\Users\\Admin\\Documents\\FSDL\\practicals\\16_helloworld\\");</script>
+<script>onHasParentDirectory();</script>
+<script>addRow(".angular",".angular",1,0,"0 B",1746200985,"5/2/25, 9:19:45 PM");</script>
+<script>addRow(".git",".git",1,0,"0 B",1746205198,"5/2/25, 10:29:58 PM");</script>
+<script>addRow(".vscode",".vscode",1,0,"0 B",1746200481,"5/2/25, 9:11:21 PM");</script>
+<script>addRow("node_modules","node_modules",1,0,"0 B",1746200932,"5/2/25, 9:18:52 PM");</script>
+<script>addRow("public","public",1,0,"0 B",1746200481,"5/2/25, 9:11:21 PM");</script>
+<script>addRow("src","src",1,0,"0 B",1746200481,"5/2/25, 9:11:21 PM");</script>
+<script>addRow(".editorconfig",".editorconfig",0,331,"331 B",1746200481,"5/2/25, 9:11:21 PM");</script>
+<script>addRow(".gitignore",".gitignore",0,629,"629 B",1746200481,"5/2/25, 9:11:21 PM");</script>
+<script>addRow("angular.json","angular.json",0,2874,"2.8 kB",1746200481,"5/2/25, 9:11:21 PM");</script>
+<script>addRow("package-lock.json","package-lock.json",0,523754,"511 kB",1746200931,"5/2/25, 9:18:51 PM");</script>
+<script>addRow("package.json","package.json",0,1249,"1.2 kB",1746200481,"5/2/25, 9:11:21 PM");</script>
+<script>addRow("README.md","README.md",0,1535,"1.5 kB",1746200481,"5/2/25, 9:11:21 PM");</script>
+<script>addRow("tsconfig.app.json","tsconfig.app.json",0,508,"508 B",1746200481,"5/2/25, 9:11:21 PM");</script>
+<script>addRow("tsconfig.json","tsconfig.json",0,942,"942 B",1746200481,"5/2/25, 9:11:21 PM");</script>
+<script>addRow("tsconfig.spec.json","tsconfig.spec.json",0,449,"449 B",1746200481,"5/2/25, 9:11:21 PM");</script>
